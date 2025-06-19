@@ -1,3 +1,7 @@
+Grupo: 12
+
+- Cruz Nicole
+  
 🌳 Introducción
 
 La deforestación representa una de las problemáticas ambientales más preocupantes en Argentina y el mundo. La pérdida de cobertura vegetal tiene consecuencias graves para la biodiversidad, el cambio climático y las comunidades locales.
