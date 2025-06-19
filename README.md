@@ -5,41 +5,44 @@ La deforestación representa una de las problemáticas ambientales más preocupa
 En este trabajo, se utilizó aprendizaje automático supervisado para analizar datos de deforestación registrados entre los años 2001 y 2020 en distintas provincias de Argentina. El objetivo fue construir un modelo que permita predecir la cantidad de hectáreas deforestadas a partir de variables como el año, la región y la provincia. Esta información podría servir como base para la toma de decisiones ambientales y la prevención de la pérdida de bosques nativos.
 
 📊 Dataset utilizado
-
-Fuente: Base entregada por la cátedra
-
+Nombre: Argentina_Deforestacion.csv
 Observaciones: 2.381 filas
-
 Columnas:
-Año
-País
-ISO del País
-Región
-ISO de Región
-Provincia
-ISO de Provincia
-Deforestación en hectáreas
-
-Se eliminaron columnas redundantes como los códigos ISO
+ year
+ country
+ country_iso2
+ region
+ region_trase_id
+ parent_region
+ parent_region_trase_id
+ deforestation_hectares
 
 🔄 Metodología
-
-Se aplicaron los siguientes pasos:
-1. Carga y exploración de datos
-2. Análisis exploratorio con gráficos
+El desarrollo del proyecto siguió una serie de pasos fundamentales en el flujo de trabajo de Machine Learning:
+1. Carga y exploración del dataset
+   Se importaron los datos y se analizaron sus dimensiones, valores nulos y primeras observaciones.
+2. Análisis exploratorio visual 
+   Se utilizó un gráfico tipo boxplot para observar la distribución de la deforestación por año, identificando outliers y tendencias generales.
 3. Codificación de variables categóricas
-4. División del dataset en entrenamiento y prueba
-5. Entrenamiento de modelo supervisado
-6. Evaluación con métricas de regresión
-7. Optimización de hiperparámetros con GridSearchCV
-El modelo elegido fue Random Forest Regressor, por su robustez frente a outliers y su buen rendimiento sin necesidad de normalización previa.
+   Las regiones fueron transformadas en variables numéricas mediante LabelEncoder, permitiendo su inclusión en el modelo.
+4. División del dataset 
+   Se separaron los datos en un 80% para entrenamiento y un 20% para evaluación utilizando train_test_split.
+5. Entrenamiento de un modelo supervisado
+   Se entrenó un modelo de regresión basado en el algoritmo Random Forest.
+6. Evaluación del modelo base
+   Se aplicaron métricas de regresión: MAE, MSE y R², para medir el desempeño inicial.
+7. Optimización de hiperparámetros 
+   Se utilizó GridSearchCV para mejorar el rendimiento ajustando parámetros clave como n_estimators y max_depth.
+   
+📌 El modelo Random Forest Regressor fue elegido por su robustez frente a outliers, su capacidad para manejar relaciones no lineales y por no requerir normalización previa de los datos.
 
 🌐 Resultados
+Tras la optimización, el modelo alcanzó un coeficiente R² superior a 0.80, lo cual indica un buen poder predictivo respecto a la variable objetivo (hectáreas deforestadas).
+📍 Hallazgos clave:
+- Las provincias del norte presentaron valores significativamente altos de deforestación.
+- Se detectaron picos importantes entre los años 2008 y 2012, lo cual podría vincularse a factores socioeconómicos o decisiones políticas de ese período.
 
-El modelo obtuvo un coeficiente R² superior al 0.80 luego de la optimización de hiperparámetros, lo que indica un buen ajuste para predecir la cantidad de hectáreas deforestadas.
-Entre los hallazgos destacados:
-Algunas provincias del norte argentino mostraron altos niveles de deforestación.
-Se observaron picos entre 2006 y 2012.
+Estos resultados pueden aportar valor al análisis ambiental y ser utilizados como base para investigaciones futuras o generación de políticas públicas más efectivas.
 
 🌱 Conclusiones y futuro
 
