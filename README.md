@@ -11,13 +11,14 @@ Nombre: Argentina_Deforestacion.csv
 Observaciones: 2.381 filas
 
 Columnas:
- year
- country
- country_iso2
- region
- region_trase_id
- parent_region
- parent_region_trase_id
+
+ year, 
+ country, 
+ country_iso2,
+ region, 
+ region_trase_id, 
+ parent_region, 
+ parent_region_trase_id, 
  deforestation_hectares
 
 🔄 Metodología
